@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+         <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css" />
+        <title>Online??</title>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script>
+function cargar(){
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+// Register the event listener
+		
+		document.addEventListener("offline", isOffline, false);
+		document.addEventListener("online", isOnline, false);
+		alert("listo");
+	}
+// Handle the online event
+//
+function isOnline() {
+	window.location="http://www.google.com";
+}
+
+// Handle the offline event
+//
+	function isOffline() {
+		document.getElementById("off").innnerHTML=("<p>uupppsss<br>No se puede conectar</p>");;
+	}
+	
+}
+</script>
+    </head>
+    <body style="background:rgb(110,77,170)" onload=cargar()>
+        <div id="off" class="ui-shadow" style="width:150px;border-radius: 5px;background:#FFF;color:DarkBlue;margin:auto;margin-top:5px;">
+           <p>UUpppsss<br>No se puede conectar</p>
+        </div>
+        
+    </body>
+</html>
